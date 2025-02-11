@@ -1,5 +1,5 @@
 <?php 
-    class Veicolo{
+    class Veicolo implements JsonSerializable{
         private $anno;
         private $marca;
 
@@ -15,5 +15,12 @@
         public function getAnno(){
             return $this->anno;
         }
+
+        public function jsonSerialize(){
+            return [
+                "year" => $this->anno,
+                "brand" => $this->marca,
+            ];
+        }          
     }
 ?>

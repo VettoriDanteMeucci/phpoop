@@ -1,5 +1,5 @@
 <?php 
-    class Alunni{
+    class Alunni implements JsonSerializable{
         protected $name;
         protected $surname;
         protected $age;
@@ -10,8 +10,12 @@
             $this->age = $age;
         }
 
-        public function getInfo(){
-            return "Name: " . $this->name . "<br>Surname: " . $this->surname ."<br>Age: ". $this->age . "<br>";
+        public function jsonSerialize(): array{
+            return [
+                "name" => $this->name,
+                "surname" => $this->surname,
+                "age" => $this->age
+            ];
         }
 
         public function getName(){

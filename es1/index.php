@@ -1,4 +1,5 @@
 <?php 
+    header("content-type: application/json");
     include("./Alunni.php");
 
     $a1 = new Alunni("Mario", "Rossi", 13);
@@ -7,8 +8,5 @@
     $a4 = new Alunni("Dario", "Prode", 4);
     $alunni = [$a1, $a2, $a3, $a4];
 
-    for($i = 0; $i<count($alunni); $i++){
-        echo $alunni[$i]->getInfo() . "<br>";
-    }
-
+    echo json_encode($alunni);
 ?>

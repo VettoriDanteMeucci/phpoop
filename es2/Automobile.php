@@ -12,5 +12,12 @@
             return $this->modello;
         }
 
+        public function jsonSerialize(){
+            return
+            [
+                "model"=> $this->modello
+            ];
+        }
+
     }
 ?>
